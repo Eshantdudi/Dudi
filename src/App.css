@@ -1,77 +1,172 @@
-body {
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+/* --- Container --- */
+.app-container {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #f9fafb, #e5e7eb); /* from-gray-50 to-gray-200 */
-  padding: 1.5rem;
+  background-image: url("/img/pipe.png"); /* public/img/bg.jpg */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Arial, sans-serif;
+  justify-content: flex-start;
+  padding: 20px;
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
 
-/* Header */
+/* --- Header --- */
+header {
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  padding: 24px;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* h1 ko center karne ke liye */
+  position: relative;
+}
+
 header h1 {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: bold;
-  color: #e46e0e; /* blue-700 */
-  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ec6c03;
+  margin: 0;
+  line-height: 1; /* text height compact ho jayega */
+}
+
+header img {
+  position: absolute;
+  left: 20px;
+  top: 50%;              /* beech me lana */
+  transform: translateY(-50%);  /* perfectly center */
+  width: 60px;
+  height: 60px;
+transition: all 0.3s ease-in-out; /* smooth animation */
+}
+header img:hover {
+  transform: translateY(-50%) scale(1.1); /* thoda zoom */
+  box-shadow: 0 6px 15px rgba(221, 139, 16, 0.6); /* blue glow */
+  cursor: pointer; /* cursor pointer ban jayega */
 }
 
 header p {
-  margin-top: 0.5rem;
-  color: #4b5563; /* gray-600 */
-  text-align: center;
+  font-size: 1rem;
+  color: #f16f05;
 }
 
-/* Card */
+/* --- Card --- */
 .card {
   width: 100%;
-  max-width: 42rem;
-  margin-bottom: 1.5rem;
-  background: #e49336;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 45px rgba(0,0,0,0.25);
+}
+
+.card-content {
+  padding: 24px;
 }
 
 .card h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #2563eb; /* blue-600 */
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: #1e3a8a;
 }
 
 .card ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  color: #374151; /* gray-700 */
+  list-style: disc inside;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: left;
+  margin: 0 auto;
 }
 
-/* Contact */
+.card ul li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card ul li:hover {
+  transform: translateX(4px);
+  color: #1e40af;
+}
+
+/* --- Contact Section --- */
 .contact p {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #374151; /* gray-700 */
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #374151;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
 }
 
-.contact small {
-  color: #6b7280; /* gray-500 */
+.contact .gst {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 6px;
 }
 
-/* WhatsApp Button */
+/* --- WhatsApp Button --- */
 .whatsapp-btn {
-  background: #16a34a; /* green-600 */
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 28px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .whatsapp-btn:hover {
-  background: #15803d; /* green-700 */
+  background: linear-gradient(135deg, #f55e06, #e77d04);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* --- Icons --- */
+.icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  color: #16a34a;
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  header h1 { font-size: 1.6rem; }
+  header p { font-size: 0.9rem; }
+  .card h2 { font-size: 1.2rem; }
+  .card ul li, .contact p { font-size: 0.9rem; }
+  .whatsapp-btn { padding: 14px 28px; font-size: 1rem; }
 }
